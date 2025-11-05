@@ -6,17 +6,10 @@ import { useState } from 'react';
 
 export default function ItemList(){
     
-    let [filter, setFilter] = useState("all");
-    let [sortBy, setSortBy] = useState("name");
+    const [sortBy, setSortBy] = useState("name");
 
-    const handleFilterChange = (event) => setFilter(event.target.value);
     const handleSortChange = (event) => setSortBy(event.target.value);
 
-    if( filter != "all" ){
-        if(filter == "young") itemArray = itemArray.filter( (item) => item.quantity <= 3 );
-        if(filter == "old") itemArray = itemArray.filter( (item) => item.quantity > 3 );
-    }
-    
     if( sortBy == "name" ){
         itemArray.sort( (itemA,itemB) => {
             if( isNaN( parseInt( itemA[sortBy] ) ) ){
