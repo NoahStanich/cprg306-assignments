@@ -2,7 +2,7 @@
 
 import { useState, useClient } from "react";
 
-export default function MealIdeas(ingredient, { selectedItemName }){
+export default function MealIdeas(ingredient){
     const meals= useState([]);
 
     const loadMealIdeas = (ingredient) => {
